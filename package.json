@@ -1,0 +1,23 @@
+{
+  "name": "json2docs",
+  "version": "1.0.0",
+  "description": "This App automatically converts JSON to jsdocs or esdocs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukes611/json2docs.git"
+  },
+  "keywords": [
+    "jsdocs",
+    "esdocs"
+  ],
+  "author": "Luke Lincoln",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukes611/json2docs/issues"
+  },
+  "homepage": "https://github.com/lukes611/json2docs#readme"
+}
