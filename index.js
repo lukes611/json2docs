@@ -73,8 +73,8 @@ let reductionToString = (object, level = 0) => {
     switch(type){
         case 'object':
             let ret = '/**\n';
-            ret += ` * @typedef {${object.realType}} ${object.name}\n`;
-            ret += object.examples.map(x => `* @property {${x.type}} ${x.name} -`).join('\n');
+            ret += ` * @typedef {${object.name == 'rootObject' ? object.realType : object.type}} ${object.name}\n`;
+            ret += object.examples.map(x => ` * @property {${x.type}} ${x.name} -`).join('\n');
             return ret + '\n */';
         default: return '';
     }
@@ -83,11 +83,11 @@ let reductionToString = (object, level = 0) => {
 
 
 const convert = () => {
-    let input = document.getElementById('input').innerHTML;
+    let input = document.getElementById('input').value;
     let inputObject = JSON.parse(input);
     let history = [];
-    let toS = reduce(inputObject, 'Pay', history);
-    console.log(history);
+    let toS = reduce(inputObject, 'rootObject', history);
+    //console.log(history);
     //console.log(toS);
     history = history.map(h => reductionToString(h));
     //history.forEach(h => console.log(h));
