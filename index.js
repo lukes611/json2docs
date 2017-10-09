@@ -3,6 +3,8 @@
 const json2str = (obj) => {
     let type = typeof obj;
     if(Array.isArray(obj)) type = 'array';
+	else if(obj === undefined) type = 'undefined';
+	else if(obj === null) type = 'undefined';
     switch(type){
         case 'object': 
             let keys = Object.keys(obj).sort();
@@ -25,6 +27,7 @@ const json2str = (obj) => {
 let reduce = (object, name, history) => {
     let type = typeof object;
     if(Array.isArray(object)) type = 'array';
+	else if(object === null) type = 'undefined';
     switch(type){
         case 'array':
             let rawExamples = object.map(x => reduce(x, name, history));
